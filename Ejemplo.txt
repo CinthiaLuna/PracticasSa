@@ -1,0 +1,32 @@
+Por lo general, el intérprete de Python se instala en file:/usr/local/bin/python en las máquinas dónde está
+disponible; poner /usr/local/bin en el camino de búsqueda de tu intérprete de comandos Unix hace
+posible iniciarlo ingresando la orden:
+python
+...en la terminal. Ya que la elección del directorio dónde vivirá el intérprete es una opción del proceso de
+instalación, puede estar en otros lugares; consultá a tu Gurú Python local o administrador de sistemas.
+(Por ejemplo, /usr/local/python es una alternativa popular).
+En máquinas con Windows, la instalación de Python por lo general se encuentra en C:\Python26,
+aunque se puede cambiar durante la instalación. Para añadir este directorio al camino, podes ingresar la
+siguiente orden en el prompt de DOS:
+set path=%path%;C:\python26
+Se puede salir del intérprete con estado de salida cero ingresando el carácter de fin de archivo
+(Control-D en Unix, Control-Z en Windows) en el prompt primario. Si esto no funciona, se puede salir
+del intérprete ingresando: import sys; sys.exit().
+Las características para editar líneas del intérprete no son muy sofisticadas. En Unix, quien instale el
+intérprete tendrá habilitado el soporte para la biblioteca GNU readlines, que añade una edición interactiva
+más elaborada e historia. Tal vez la forma más rápida de detectar si las características de edición están
+presentes es ingresar Control-P en el primer prompt de Python que aparezca. Si se escucha un beep, las
+características están presentes; ver Apéndice tut-interacting para una introducción a las teclas. Si no pasa
+nada, o si aparece ^P, estas características no están disponibles; solo vas a poder usar backspace para
+borrar los caracteres de la línea actual.
+La forma de operar del intérprete es parecida a la línea de comandos de Unix: cuando se la llama con la
+entrada estándar conectada a una terminal lee y ejecuta comandos en forma interactiva; cuando es
+llamada con un nombre de archivo como argumento o con un archivo como entrada estándar, lee y
+ejecuta un script del archivo.
+Una segunda forma de iniciar el intérprete es python -c comando [arg] ..., que ejecuta las
+sentencias en comando, similar a la opción -c de la línea de comandos. Ya que las sentencias de Python
+suelen tener espacios en blanco u otros caracteres que son especiales en la línea de comandos, es
+normalmente recomendado citar comando entre comillas dobles.
+Algunos módulos de Python son también útiles como scripts. Pueden invocarse usando python -m
+module [arg] ..., que ejecuta el código de module como si se hubiese ingresado su nombre completo
+en la línea de comandos.
